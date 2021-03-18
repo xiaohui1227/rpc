@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-rpc-server
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-rpc-server
+  template:
+    metadata:
+      labels:
+        app: test-rpc-server
+    spec:
+      containers:
+      - name: test-rpc-server
+        image: registry.cn-shanghai.aliyuncs.com/ingtube-prod/test-rpc-server:git.81208418d59e45409c3cb0a00255fa06e51d2111
+        imagePullPolicy: Always
+        command:
+        - java
+        - -jar
+        - target/rpc-1.0-SNAPSHOT-jar-with-dependencies.jar
+        env:
+        - name: MY_POD_NAMESPACE
+          value: dev
+        ports:
+        - containerPort: 30022

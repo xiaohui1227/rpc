@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-rpc-server
+  namespace: production
+spec:
+  ports:
+  - nodePort: 30033
+    port: 80
+    targetPort: 80
+  selector:
+    app: test-rpc-server
+  type: NodePort
