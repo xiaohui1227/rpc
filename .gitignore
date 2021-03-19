@@ -1,4 +1,4 @@
 *.iml
-target
+/target/*
+!/target/rpc-1.0-SNAPSHOT-jar-with-dependencies.jar
 .idea
-!target/rpc-1.0-SNAPSHOT-jar-with-dependencies.jar
