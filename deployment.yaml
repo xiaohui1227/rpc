@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: test-rpc-server
-        image: registry.cn-shanghai.aliyuncs.com/ingtube-prod/ls
+        image: registry.cn-shanghai.aliyuncs.com/ingtube-prod/rpc:git.81208418d59e45409c3cb0a00255fa06e51d2111
         imagePullPolicy: Always
         command:
         - java
